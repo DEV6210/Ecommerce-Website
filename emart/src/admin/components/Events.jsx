@@ -3,12 +3,13 @@ import { useNavigate, useParams } from 'react-router'
 import LeftColumn from './LeftColumn'
 import RightColumn_TopNav from './RightColumn_TopNav'
 import './css/event.css'
+import { apiurl } from '../../services/api'
 export const Events = () => {
   const navigate = useNavigate()
 
   const { id } = useParams()
   const matchParams = async () => {
-    const resultx = await fetch('http://localhost:8000/admin_matchparams', {
+    const resultx = await fetch(`${apiurl}/admin_matchparams`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

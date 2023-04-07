@@ -17,6 +17,7 @@ import { color } from '@mui/system'
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { apiurl } from '../../services/api'
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -57,7 +58,7 @@ export const RegisterUser = () => {
 
   const { id } = useParams()
   const matchParams = async () => {
-    const resultx = await fetch('http://localhost:8000/admin_matchparams', {
+    const resultx = await fetch(`${apiurl}/admin_matchparams`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -79,7 +80,7 @@ export const RegisterUser = () => {
   const [done, setDone] = useState(undefined)
   const [user, setuser] = useState()
   const getUser = async () => {
-    const res = await fetch('http://localhost:8000/getuser', {
+    const res = await fetch(`${apiurl}/getuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -106,7 +107,7 @@ export const RegisterUser = () => {
 
   const suspend = async (e) => {
     const id = e
-    const res = await fetch('http://localhost:8000/suspend', {
+    const res = await fetch(`${apiurl}/suspend`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -169,7 +170,7 @@ export const RegisterUser = () => {
                 <button type="button" className=" up4" onClick={handleClose}><i class="fa-solid fa-xmark"></i></button>
               </div>
               <div className='card2-body'>
-                <img src={`http://localhost:8000/users_image/${viewuser.image}`} alt='userphoto' className='userphoto2' />
+                <img src={`${apiurl}/users_image/${viewuser.image}`} alt='userphoto' className='userphoto2' />
                 <div style={{ marginLeft: '5px' }}>
                   <p>{viewuser.name}</p>
                   <p>{viewuser.phone}</p>
@@ -220,7 +221,7 @@ export const RegisterUser = () => {
                               <CardHeader
                                 avatar={
                                   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                                    <img src={`http://localhost:8000/users_image/${image}`} alt='user photo' className='reg-user-image' />
+                                    <img src={`${apiurl}/users_image/${image}`} alt='user photo' className='reg-user-image' />
                                   </Avatar>
                                 }
                                 action={

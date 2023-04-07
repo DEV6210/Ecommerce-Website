@@ -6,7 +6,7 @@ import Loading from "../../loading/loading"
 import BottomNavbar from "../login_components/BottomNavbar"
 import TopNavDesktop from "../login_components/topnav-desktop"
 import TopNavbarAll_login from "../login_components/TopNavbarAll_login"
-
+import {apiurl} from '../../services/api.jsx'
 const ViewProductCatagoryWise = () => {
     const navigate = useNavigate()
     const [user, setUser] = useState('')
@@ -14,7 +14,7 @@ const ViewProductCatagoryWise = () => {
     const { uid, catagory } = useParams()
     // console.log(uid)
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const ViewProductCatagoryWise = () => {
     const [done, setDone] = useState(undefined)
 
     const getProduct = async () => {
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ const ViewProductCatagoryWise = () => {
         const { search } = searchitem
         const catagory = search
         // console.log(catagory)
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -227,7 +227,7 @@ const ViewProductCatagoryWise = () => {
                                                             <NavLink to={`/viewproduct/${_id}/${user._id}`} className='card'>
                                                                 {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                                 <div className="imgsection">
-                                                                    <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                    <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                                 </div>
                                                                 <div class="card_body">
                                                                     <b className='p_title'>{name}</b>
@@ -270,7 +270,7 @@ const ViewProductCatagoryWise = () => {
                                                             <NavLink to={`/viewproduct/${_id}/${user._id}`} className='card'>
                                                                 {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                                 <div className="imgsection">
-                                                                    <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                    <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                                 </div>
                                                                 <div class="card_body">
                                                                     <b className='p_title'>{name}</b>

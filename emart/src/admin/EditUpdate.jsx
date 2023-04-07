@@ -21,6 +21,7 @@ import StoreIcon from '@mui/icons-material/Store';
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { apiurl } from "../services/api"
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -61,7 +62,7 @@ const UpdateDelete = () => {
     const { id } = useParams()
     const uid = id
     const matchParams = async () => {
-        const resultx = await fetch('http://localhost:8000/admin_matchparams', {
+        const resultx = await fetch(`${apiurl}/admin_matchparams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -86,7 +87,7 @@ const UpdateDelete = () => {
     const [done, setDone] = useState(undefined)
 
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/getProduct', {
+        const getResult = await fetch(`${apiurl}/getProduct`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -151,7 +152,7 @@ const UpdateDelete = () => {
         }
 
         const { id, pname, desc, catagory, pprice, pdiscount } = productData
-        const res = await fetch('http://localhost:8000/updateproduct',
+        const res = await fetch(`${apiurl}/updateproduct`,
             {
                 method: 'POST',
                 headers: {
@@ -200,7 +201,7 @@ const UpdateDelete = () => {
     const deleteProduct = async () => {
         // console.log(deleteid)
         const id = deleteid
-        const res = await fetch('http://localhost:8000/deleteproduct',
+        const res = await fetch(`${apiurl}/deleteproduct`,
             {
                 method: 'POST',
                 headers: {
@@ -371,7 +372,7 @@ const UpdateDelete = () => {
                                                                 <div className='cartstyle'>
                                                                     <NavLink className=' productcard'>
                                                                         <div className="imgsection">
-                                                                            <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='edit-product-image' />
+                                                                            <img src={`${apiurl}/uploads/${image}`} alt='product image' className='edit-product-image' />
                                                                         </div>
                                                                         <div className="card_body2">
                                                                             <b className='p_title'>{name}</b>

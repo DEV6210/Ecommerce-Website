@@ -7,7 +7,6 @@ import { useNavigate, useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import BottomNavbar from "../login_components/BottomNavbar";
 import './css/viewproduct.css'
-
 //alert library
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
@@ -18,6 +17,7 @@ import TopNavbarAll_login from '../login_components/TopNavbarAll_login';
 import Loading from '../../loading/loading';
 import TopNavDesktop from '../login_components/topnav-desktop';
 import Footer from '../../components/Footer';
+import { apiurl } from '../../services/api';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -61,7 +61,7 @@ const ViewProduct = () => {
     const userid = user._id
     // user params -------------
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ const ViewProduct = () => {
     // display single product -------------
     const [viewProduct, setviewProduct] = useState([])
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/viewProduct', {
+        const getResult = await fetch(`${apiurl}/viewProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -124,7 +124,7 @@ const ViewProduct = () => {
     // Add to cart insert into database
     const fav = 'true'
     const cart = async () => {
-        const cartresult = await fetch('http://localhost:8000/addcart', {
+        const cartresult = await fetch(`${apiurl}/addcart`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -156,7 +156,7 @@ const ViewProduct = () => {
     //removeCart
     const removeCart = async () => {
         if (document.getElementById('fav').className === 'fa-solid fa-heart lovex') {
-            const cartresult = await fetch('http://localhost:8000/removecart', {
+            const cartresult = await fetch(`${apiurl}/removecart`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -186,7 +186,7 @@ const ViewProduct = () => {
 
     //fetch fav data
     const favData = async () => {
-        const cartresult = await fetch('http://localhost:8000/favdata', {
+        const cartresult = await fetch(`${apiurl}/favdata`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -248,7 +248,7 @@ const ViewProduct = () => {
     const [product, setProduct] = useState([])
 
     const displayProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/getProduct', {
+        const getResult = await fetch(`${apiurl}/getProduct`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -268,7 +268,7 @@ const ViewProduct = () => {
 
     //reload page 
     const reloadSamePage = async () => {
-        const getResult = await fetch('http://localhost:8000/viewProduct', {
+        const getResult = await fetch(`${apiurl}/viewProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -305,7 +305,7 @@ const ViewProduct = () => {
         const { search } = searchitem
         const catagory = search
         // console.log(catagory)
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -462,7 +462,7 @@ const ViewProduct = () => {
                                                         <NavLink onClick={() => reloadproduct(`/viewproduct/${_id}/${user._id}`)} className='card'>
                                                             {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                             <div className="imgsection">
-                                                                <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                             </div>
                                                             <div class="card_body">
                                                                 <b className='p_title'>{name}</b>
@@ -511,7 +511,7 @@ const ViewProduct = () => {
                                             <div className="singleProduct-modal">
                                                 <div className='rl1'>
                                                     <div className='imgcenter'>
-                                                        <img src={`http://localhost:8000/uploads/${image}`} alt="view" className="singleImage" />
+                                                        <img src={`${apiurl}/uploads/${image}`} alt="view" className="singleImage" />
                                                     </div>
                                                     <div className="btn-group">
                                                         <button onClick={cart} className="btn-cart">Add To Cart</button>
@@ -590,7 +590,7 @@ const ViewProduct = () => {
                                                                 <NavLink onClick={reloadSamePage} to={`/viewproduct/${_id}/${user._id}`} className='card'>
                                                                     {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                                     <div className="imgsection">
-                                                                        <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                        <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                                     </div>
                                                                     <div class="card_body">
                                                                         <b className='p_title'>{name}</b>

@@ -15,7 +15,7 @@ import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useNavigate } from 'react-router';
-
+import { apiurl } from '../services/api';
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -85,7 +85,7 @@ export default function InputAdornments() {
             }
             let id = sid.toLowerCase()
             console.log(id, pass)
-            const result = await fetch('http://localhost:8000/admin', {
+            const result = await fetch(`${apiurl}/admin`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -114,7 +114,7 @@ export default function InputAdornments() {
     // const chcat= async()=>{
     //     const catagory='camera'
     //     const setcat='camera'
-    //     const result = await fetch('http://localhost:8000/changecatagory', {
+    //     const result = await fetch('${apiurl}/changecatagory', {
     //         method: 'POST',
     //         headers: {
     //             'Content-Type': 'application/json'

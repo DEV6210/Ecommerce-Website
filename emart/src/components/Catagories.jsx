@@ -3,7 +3,7 @@ import Navbarall from "./NavbarAll";
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router"
 import { NavLink } from "react-router-dom"
-
+import { apiurl } from '../../src/services/api'
 const Catagories = () => {
     const navigate = useNavigate()
     const { catagory } = useParams()
@@ -14,7 +14,7 @@ const Catagories = () => {
     const [done, setDone] = useState(undefined)
 
     const getProduct = async () => {
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useEffect } from "react";
-
+import { apiurl } from '../services/api';
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -100,7 +100,7 @@ const Signup = () => {
                     //insert data into database...
                     const { name, email, phone, password, conform, address, image } = user;
 
-                    const res = await fetch('http://localhost:8000/register', {
+                    const res = await fetch(`${apiurl}/register`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

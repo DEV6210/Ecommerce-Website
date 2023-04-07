@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-
+import { apiurl } from "../../services/api";
 const TopNavDesktop = (props) => {
     if (props.navcssValue === 'tpnav-1') {
         var Style1 = {
@@ -50,7 +50,7 @@ const TopNavDesktop = (props) => {
     // check params id 
     const [user, setUser] = useState('')
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

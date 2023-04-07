@@ -12,7 +12,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-
+import { apiurl } from "../../services/api";
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -48,7 +48,7 @@ const Wishlist = () => {
     // match params 
     const [user, setUser] = useState('')
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ const Wishlist = () => {
 
     //fetch cart data
     const favData = async () => {
-        const cartresult = await fetch('http://localhost:8000/favdata_uid', {
+        const cartresult = await fetch(`${apiurl}/favdata_uid`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -97,7 +97,7 @@ const Wishlist = () => {
     //remove cart data
     const removeCart = async (pid) => {
         console.log(pid)
-        const cartresult = await fetch('http://localhost:8000/removecart', {
+        const cartresult = await fetch(`${apiurl}/removecart`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -155,7 +155,7 @@ const Wishlist = () => {
                                         <div className="cartBody">
                                             <div className="towDiv">
                                                 <div className="imageDiv">
-                                                    <img src={`http://localhost:8000/uploads/${p.image}`} alt="favimg" className="pimage" />
+                                                    <img src={`${apiurl}/uploads/${p.image}`} alt="favimg" className="pimage" />
                                                 </div>
                                                 <div className="textDiv">
                                                     <b className='p_title'>{p.name}</b>

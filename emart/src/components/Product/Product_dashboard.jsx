@@ -11,6 +11,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
+import { apiurl } from '../../services/api';
 
 const style = {
     position: 'absolute',
@@ -23,6 +24,8 @@ const style = {
 
 };
 
+
+
 const Product_dashboard = () => {
     var Style1 = {
         backgroundColor: 'rgb(96, 197, 172)',
@@ -34,7 +37,7 @@ const Product_dashboard = () => {
     const [done, setDone] = useState(undefined)
 
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/getProduct', {
+        const getResult = await fetch(`${apiurl}/getProduct`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +69,7 @@ const Product_dashboard = () => {
         const { search } = searchitem
         const catagory = search
         // console.log(catagory)
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -209,7 +212,7 @@ const Product_dashboard = () => {
                                                         <NavLink to={`/viewproduct/${id}`} className='card'>
                                                             {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                             <div className="imgsection">
-                                                                <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                             </div>
                                                             <div class="card_body">
                                                                 <b className='p_title'>{name}</b>
@@ -404,7 +407,7 @@ const Product_dashboard = () => {
                                                                         <NavLink to={`/viewproduct/${id}`} className='card'>
                                                                             {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                                             <div className="imgsection">
-                                                                                <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                                <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                                             </div>
                                                                             <div class="card_body">
                                                                                 <b className='p_title'>{name}</b>

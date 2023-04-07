@@ -4,7 +4,7 @@ import BottomNavbar from "./BottomNavbar";
 import TopNavbarAll_login from "./TopNavbarAll_login";
 import './css/contacus.css'
 import SendIcon from '@mui/icons-material/Send';
-
+import { apiurl } from "../../services/api";
 
 const Customer_Support = () => {
     const navigate = useNavigate()
@@ -14,7 +14,7 @@ const Customer_Support = () => {
     // check params id 
     const [user, setUser] = useState('')
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

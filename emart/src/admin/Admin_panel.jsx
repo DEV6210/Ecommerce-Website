@@ -6,7 +6,7 @@ import LeftOptions from './components/LeftOptions'
 import RightColumn_TopNav from './components/RightColumn_TopNav'
 import './css/admin_panel.css'
 import './css/uploadform.css'
-
+import { apiurl } from '../services/api'
 
 export default function Admin_panel() {
 
@@ -15,7 +15,7 @@ export default function Admin_panel() {
 
   const { id } = useParams()
   const matchParams = async () => {
-    const resultx = await fetch('http://localhost:8000/admin_matchparams', {
+    const resultx = await fetch(`${apiurl}/admin_matchparams`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ export default function Admin_panel() {
       formData.append('inr_off', inr_off)
       formData.append('seles_price', seles_off)
 
-      const res = await fetch('http://localhost:8000/uploadproduct',
+      const res = await fetch(`${apiurl}/uploadproduct`,
         {
           method: 'POST',
           body: formData

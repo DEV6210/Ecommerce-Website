@@ -3,7 +3,7 @@ import { useLocation, useNavigate, useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import BottomNavbar from "./BottomNavbar";
 import TopNavbarAll_login from "./TopNavbarAll_login";
-
+import {apiurl} from '../../services/api'
 const Item_Catagory = () => {
     const { uid } = useParams()
     console.log('item page ', ' ' + uid)
@@ -11,7 +11,7 @@ const Item_Catagory = () => {
 
     const [user, setUser] = useState('')
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

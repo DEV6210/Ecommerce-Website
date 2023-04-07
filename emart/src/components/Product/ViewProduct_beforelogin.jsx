@@ -17,6 +17,7 @@ import { BottomNav } from '../Navbar';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import { apiurl } from '../../services/api';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -60,7 +61,7 @@ const ViewProductBeforeLogin = () => {
     // display single product -------------
     const [viewProduct, setviewProduct] = useState([])
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/viewProduct', {
+        const getResult = await fetch(`${apiurl}/viewProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -151,7 +152,7 @@ const ViewProductBeforeLogin = () => {
     const [product, setProduct] = useState([])
 
     const displayProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/getProduct', {
+        const getResult = await fetch(`${apiurl}/getProduct`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -171,7 +172,7 @@ const ViewProductBeforeLogin = () => {
 
     //reload page 
     const reloadSamePage = async () => {
-        const getResult = await fetch('http://localhost:8000/viewProduct', {
+        const getResult = await fetch(`${apiurl}/viewProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -210,7 +211,7 @@ const ViewProductBeforeLogin = () => {
         const { search } = searchitem
         const catagory = search
         // console.log(catagory)
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -355,7 +356,7 @@ const ViewProductBeforeLogin = () => {
                                                     <NavLink onClick={()=>reloadproduct(`/viewproduct/${id}`)} className='card'>
                                                         {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                         <div className="imgsection">
-                                                            <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                            <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                         </div>
                                                         <div class="card_body">
                                                             <b className='p_title'>{name}</b>
@@ -409,7 +410,7 @@ const ViewProductBeforeLogin = () => {
                                             <div className="singleProduct-modal">
                                                 <div className='rl1'>
                                                     <div className='imgcenter'>
-                                                        <img src={`http://localhost:8000/uploads/${image}`} alt="view" className="singleImage" />
+                                                        <img src={`${apiurl}/uploads/${image}`} alt="view" className="singleImage" />
                                                     </div>
                                                     <div className="btn-group">
                                                         <button onClick={cart} className="btn-cart">Add To Cart</button>
@@ -488,7 +489,7 @@ const ViewProductBeforeLogin = () => {
                                                                 <NavLink onClick={reloadSamePage} to={`/viewproduct/${_id}`} className='card'>
                                                                     {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                                     <div className="imgsection">
-                                                                        <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                        <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                                     </div>
                                                                     <div class="card_body">
                                                                         <b className='p_title'>{name}</b>

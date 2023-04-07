@@ -8,7 +8,7 @@ import Profile from "../login_components/Profile";
 import Footer from "../../components/Footer";
 // import Footer from "../login_components/footer";
 import './css/slider.scss'
-
+import { apiurl } from '../../services/api'
 const Dashboard = () => {
 
     var Style1 = {
@@ -22,7 +22,7 @@ const Dashboard = () => {
     const { uid } = useParams()
     // console.log(uid)
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ const Dashboard = () => {
     const [done, setDone] = useState(undefined)
 
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/getProduct', {
+        const getResult = await fetch(`${apiurl}/getProduct`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ const Dashboard = () => {
         const { search } = searchitem
         const catagory = search
         // console.log(catagory)
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -183,7 +183,7 @@ const Dashboard = () => {
                             <NavLink to={`/wishlist/${uid}`} className='nav_link home'>
                                 <i class="fa-solid fa-heart"></i>
                                 <span className="nav_title">Wishlist</span>
-                                
+
                             </NavLink>
                             <NavLink to={`/orderhistory/${uid}`} className='nav_link home'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart3 bottom-option ordericon" viewBox="0 0 16 16">
@@ -203,7 +203,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-           
+
 
 
             {/* body  */}
@@ -228,7 +228,7 @@ const Dashboard = () => {
                                                         <NavLink to={`/viewproduct/${_id}/${user._id}`} className='card'>
                                                             {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                             <div className="imgsection">
-                                                                <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                             </div>
                                                             <div class="card_body">
                                                                 <b className='p_title'>{name}</b>
@@ -409,7 +409,7 @@ const Dashboard = () => {
                                         <h3 className='head_title'>Brand New Popular Product</h3>
 
                                         <div>
-                                            
+
                                         </div>
 
                                         <div className='product-list row'>
@@ -425,7 +425,7 @@ const Dashboard = () => {
                                                                     <NavLink to={`/viewproduct/${_id}/${user._id}`} className='card'>
                                                                         {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                                         <div className="imgsection">
-                                                                            <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                            <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                                         </div>
                                                                         <div class="card_body">
                                                                             <b className='p_title'>{name}</b>

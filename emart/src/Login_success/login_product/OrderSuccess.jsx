@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import groovyWalkAnimation from '../../components/json_image/61777-order-complete.json';
 import './css/ordersuccess.css'
-
+import { apiurl } from '../../services/api'
 const OrderSuccess = () => {
     const navigate = useNavigate()
 
@@ -16,7 +16,7 @@ const OrderSuccess = () => {
     const userid = user._id
     // user params -------------
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ const OrderSuccess = () => {
     // display single product -------------
     const [viewProduct, setviewProduct] = useState([])
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/viewProduct', {
+        const getResult = await fetch(`${apiurl}/viewProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ const OrderSuccess = () => {
                 <Lottie animationData={groovyWalkAnimation} loop={false} className='ordersuccessimage' />
             </div>
             <div className="ordsuccress2">
-            <b className="ordcnf">Order Conformed</b>
+                <b className="ordcnf">Order Conformed</b>
             </div>
         </>
     );

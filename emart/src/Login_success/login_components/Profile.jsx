@@ -11,6 +11,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { apiurl } from "../../services/api";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -46,7 +47,7 @@ const Profile = () => {
     // check params id 
     const [user, setUser] = useState('')
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -101,7 +102,7 @@ const Profile = () => {
             setAlert('warning')
             setMessage('Enter Your New Name')
         } else {
-            const res = await fetch('http://localhost:8000/changename', {
+            const res = await fetch(`${apiurl}/changename`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -157,7 +158,7 @@ const Profile = () => {
             setAlert('warning')
             setMessage('All Field is required')
         } else {
-            const res = await fetch('http://localhost:8000/updateaddress', {
+            const res = await fetch(`${apiurl}/updateaddress`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -189,7 +190,7 @@ const Profile = () => {
         const formdata = new FormData()
         formdata.append('img', image.img, image.img.name)
         formdata.append('uid', image.uid)
-        const res = await fetch('http://localhost:8000/changeimage', {
+        const res = await fetch(`${apiurl}/changeimage`, {
             method: 'POST',
             body: formdata
         });
@@ -279,7 +280,7 @@ const Profile = () => {
                                 <input type="file" id="suimg" className="form-control" onChange={fileData} name='img' hidden />
 
                                 <label for="suimg" className="image_area container" >
-                                    <img src={`http://localhost:8000/users_image/${user.image}`} for='suimg' alt="use photo" className="userphoto" />
+                                    <img src={`${apiurl}/users_image/${user.image}`} for='suimg' alt="use photo" className="userphoto" />
                                     <div class="middle">
                                         <div class="text userphoto">Change</div>
                                     </div>

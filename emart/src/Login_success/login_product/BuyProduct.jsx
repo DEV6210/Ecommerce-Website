@@ -15,7 +15,7 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import TopNavDesktop from "../login_components/topnav-desktop"
-
+import { apiurl } from "../../services/api"
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -51,7 +51,7 @@ const BuyProduct = () => {
     const userid = user._id
     // user params -------------
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ const BuyProduct = () => {
     // display single product -------------
     const [viewProduct, setviewProduct] = useState([])
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/viewProduct', {
+        const getResult = await fetch(`${apiurl}/viewProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -168,7 +168,7 @@ const BuyProduct = () => {
             document.getElementById('conform-order').style.height = '100vh'
 
             const paymentSuccess = async () => {
-                const buy = await fetch('http://localhost:8000/buy', {
+                const buy = await fetch(`${apiurl}/buy`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -196,7 +196,7 @@ const BuyProduct = () => {
 
 
         } else {
-            const buy = await fetch('http://localhost:8000/buy', {
+            const buy = await fetch(`${apiurl}/buy`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -317,7 +317,7 @@ const BuyProduct = () => {
                 <div className="buy-1">
                     <div className="buy">
                         <div className="bdiv-1">
-                            <img src={`http://localhost:8000/uploads/${image}`} alt="view" className="buyimage" />
+                            <img src={`${apiurl}/uploads/${image}`} alt="view" className="buyimage" />
                         </div>
                         <div class="card_body bdiv-2">
                             <b className='v_title'>{name}</b>

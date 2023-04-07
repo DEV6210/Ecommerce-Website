@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import BottomNavbar from "./BottomNavbar";
 import Profile from "./Profile";
 import './css/myaccount.css'
-
+import { apiurl } from "../../services/api";
 const MyAccount = () => {
     const { uid } = useParams()
     // console.log('myac page ', ' ' + uid)
@@ -11,7 +11,7 @@ const MyAccount = () => {
 
     const [user, setUser] = useState('')
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

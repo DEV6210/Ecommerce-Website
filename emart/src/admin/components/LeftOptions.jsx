@@ -4,7 +4,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
-
+import { apiurl } from "../../services/api";
 const style = {
     position: 'absolute',
     top: '50%',
@@ -57,7 +57,7 @@ var LeftOptions = (props) => {
     const [admin, setadmin] = React.useState([])
     const handleOpen = async () => {
         setOpen(true);
-        const res = await fetch('http://localhost:8000/admindetails', {
+        const res = await fetch(`${apiurl}/admindetails`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -12,7 +12,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-
+import { apiurl } from "../../services/api";
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -49,7 +49,7 @@ const OrderHostiry = () => {
     // check params id 
     const [user, setUser] = useState('')
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ const OrderHostiry = () => {
     const [history, setHistory] = useState([])
     // get order history 
     const orderhistor = async () => {
-        const res = await fetch('http://localhost:8000/orderhistory', {
+        const res = await fetch(`${apiurl}/orderhistory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ const OrderHostiry = () => {
         document.getElementById('stepers').style.display = 'flex'
         // console.log(bid)
 
-        const res = await fetch('http://localhost:8000/buyingstatus', {
+        const res = await fetch(`${apiurl}/buyingstatus`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -164,7 +164,7 @@ const OrderHostiry = () => {
 
     const cancelOrder = async (bid) => {
         // console.log('canceled')
-        const res = await fetch('http://localhost:8000/ordercancel', {
+        const res = await fetch(`${apiurl}/ordercancel`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -196,7 +196,7 @@ const OrderHostiry = () => {
     }
 
     const reOrder = async (bid) => {
-        const res = await fetch('http://localhost:8000/reorder', {
+        const res = await fetch(`${apiurl}/reorder`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -290,7 +290,7 @@ const OrderHostiry = () => {
                                         <div className="cartBody">
                                             <div className="towDiv">
                                                 <div className="imageDiv">
-                                                    <img src={`http://localhost:8000/uploads/${p.pimage}`} alt="favimg" className="pimage" />
+                                                    <img src={`${apiurl}/uploads/${p.pimage}`} alt="favimg" className="pimage" />
                                                 </div>
                                                 <div className="textDiv">
                                                     <b className='p_title'>{p.pname}</b>

@@ -2,13 +2,14 @@ import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import LeftColumn from './LeftColumn'
 import RightColumn_TopNav from './RightColumn_TopNav'
+import { apiurl } from '../../services/api'
 
 export default function Notification() {
   const navigate = useNavigate()
 
   const { id } = useParams()
   const matchParams = async () => {
-    const resultx = await fetch('http://localhost:8000/admin_matchparams', {
+    const resultx = await fetch(`${apiurl}/admin_matchparams`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

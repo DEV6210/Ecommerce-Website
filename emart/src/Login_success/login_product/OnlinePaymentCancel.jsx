@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router"
 import Lottie from "lottie-react";
 import groovyWalkAnimation from '../../components/json_image/134704-cancel.json';
 import './css/ordersuccess.css'
+import { apiurl } from "../../services/api";
 
 const OnlinePaymentCancel = () => {
     const navigate = useNavigate()
@@ -17,7 +18,7 @@ const OnlinePaymentCancel = () => {
     const userid = user._id
     // user params -------------
     const match_userParams = async () => {
-        const res = await fetch('http://localhost:8000/login_userParams', {
+        const res = await fetch(`${apiurl}/login_userParams`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -44,7 +45,7 @@ const OnlinePaymentCancel = () => {
     // display single product -------------
     const [viewProduct, setviewProduct] = useState([])
     const getProduct = async () => {
-        const getResult = await fetch('http://localhost:8000/viewProduct', {
+        const getResult = await fetch(`${apiurl}/viewProduct`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

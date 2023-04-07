@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useEffect } from "react";
+import { apiurl } from "../services/api";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -73,7 +74,7 @@ const Login = () => {
             //user data
             const { uid, upass } = loginuser;
 
-            const res = await fetch('http://localhost:8000/login', {
+            const res = await fetch(`${apiurl}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

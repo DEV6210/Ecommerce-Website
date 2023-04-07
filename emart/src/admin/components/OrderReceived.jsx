@@ -19,6 +19,8 @@ import MuiAlert from '@mui/material/Alert';
 import { Button } from '@mui/material';
 import Lottie from "lottie-react";
 import groovyWalkAnimation from '../../components/json_image/delivery-truck.json';
+import { apiurl } from '../../services/api';
+import Loading from '../../loading/loading';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -54,7 +56,7 @@ function ChildModal(props) {
   const btn_process = async () => {
     const id = props.id
     const status = 'Processing'
-    const res = await fetch('http://localhost:8000/updatestatus', {
+    const res = await fetch(`${apiurl}/updatestatus`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -73,7 +75,7 @@ function ChildModal(props) {
   const btn_shift = async () => {
     const id = props.id
     const status = 'Shifting'
-    const res = await fetch('http://localhost:8000/updatestatus', {
+    const res = await fetch(`${apiurl}/updatestatus`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -92,7 +94,7 @@ function ChildModal(props) {
   const btn_deliver = async () => {
     const id = props.id
     const status = 'Delivered'
-    const res = await fetch('http://localhost:8000/updatestatus', {
+    const res = await fetch(`${apiurl}/updatestatus`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -111,7 +113,7 @@ function ChildModal(props) {
   const btn_cancel = async () => {
     const id = props.id
     const status = 'Cancelled'
-    const res = await fetch('http://localhost:8000/updatestatus', {
+    const res = await fetch(`${apiurl}/updatestatus`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -187,7 +189,7 @@ export default function OrderReceived() {
 
   const { id } = useParams()
   const matchParams = async () => {
-    const resultx = await fetch('http://localhost:8000/admin_matchparams', {
+    const resultx = await fetch(`${apiurl}/admin_matchparams`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -209,7 +211,7 @@ export default function OrderReceived() {
 
   const [order, setorder] = useState([])
   const orders = async () => {
-    const res = await fetch('http://localhost:8000/orders', {
+    const res = await fetch(`${apiurl}/orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -237,7 +239,7 @@ export default function OrderReceived() {
   const deleteitem = async (e) => {
     // console.log(e)
     const id = e
-    const res = await fetch('http://localhost:8000/deleteorderitem', {
+    const res = await fetch(`${apiurl}/deleteorderitem`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -288,7 +290,7 @@ export default function OrderReceived() {
                 <button type="button" className=" up4" onClick={handleClose}><i class="fa-solid fa-xmark"></i></button>
               </div>
               <div className='ordercard'>
-                <img src={`http://localhost:8000/uploads/${productdeatils.pimage}`} alt='pimage' className='ord-image card_bodyx' />
+                <img src={`${apiurl}/uploads/${productdeatils.pimage}`} alt='pimage' className='ord-image card_bodyx' />
               </div>
               <div class="card_bodyx">
                 <b className='p_title'>{productdeatils.pname}</b>
@@ -309,7 +311,7 @@ export default function OrderReceived() {
 
               <Stack direction="row" className='action-button'>
                 <Button color="error" onClick={() => { deleteitem(productdeatils._id) }}>delete</Button>
-                <ChildModal  id={productdeatils._id} />
+                <ChildModal id={productdeatils._id} />
               </Stack>
 
 
@@ -340,71 +342,45 @@ export default function OrderReceived() {
             <div className='edit-body'>
               <div >
                 {
-                  order.map((item) => {
-                    const { _id, uid, uname, email, phone, address, uimage, pid, pname, desc, catagory, price, qty, totalprice, payment, status, pimage } = item
+                  !order ? <Loading />
+                    :
+                    order.map((item) => {
+                      const { _id, uid, uname, email, phone, address, uimage, pid, pname, desc, catagory, price, qty, totalprice, payment, status, pimage } = item
 
-                    return (
-                      <>
-                        <Card sx={{ maxWidth: 345, }} className='histoirybody usercard'>
-                          <CardHeader
-                            avatar={
-                              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                                <img src={`http://localhost:8000/users_image/${uimage}`} alt='user photo' className='reg-user-image' />
-                              </Avatar>
-                            }
-                            action={
-                              <IconButton aria-label="settings" onClick={() => { handleOpen({ _id, uid, uname, email, phone, address, uimage, pid, pname, desc, catagory, price, qty, totalprice, payment, status, pimage }) }}>
-                                <MoreVertIcon />
-                              </IconButton>
-                            }
-                            title={uname}
-                            subheader={email}
-                          />
-                          <div className='ordercard'>
-                            <img src={`http://localhost:8000/uploads/${pimage}`} alt='pimage' className='ord-image' />
-                          </div>
-                          <div class="card_body2">
-                            <b className='p_title'>{pname}</b>
-                            <p>{desc}</p>
-                            <div className='inr'>
-                              <span className='rs'>₹{totalprice} </span>
-                              <span>Qty: {qty}</span>
+                      return (
+                        <>
+                          <Card sx={{ maxWidth: 345, }} className='histoirybody usercard'>
+                            <CardHeader
+                              avatar={
+                                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                  <img src={`${apiurl}/users_image/${uimage}`} alt='user photo' className='reg-user-image' />
+                                </Avatar>
+                              }
+                              action={
+                                <IconButton aria-label="settings" onClick={() => { handleOpen({ _id, uid, uname, email, phone, address, uimage, pid, pname, desc, catagory, price, qty, totalprice, payment, status, pimage }) }}>
+                                  <MoreVertIcon />
+                                </IconButton>
+                              }
+                              title={uname}
+                              subheader={email}
+                            />
+                            <div className='ordercard'>
+                              <img src={`${apiurl}/uploads/${pimage}`} alt='pimage' className='ord-image' />
                             </div>
-                            <b>Payment Mode: {payment}</b>
-                          </div>
-                          <div>
-                            <div >
-                              {/* step-1 */}
-                              {
-                                status === 'Processing' ?
-                                  <div className="ordersteper">
-                                    <div className="st-icon-1">
-                                      <div className="text-center">
-                                        <NavLink><i id="step-1-complete" className="fa-solid fa-circle"></i></NavLink>
-                                      </div>
-                                      <div className="stage1">Processing</div>
-                                    </div>
-                                    <hr className="hr1 hrx1 border-3 opacity-100" />
-                                    {/* step-2 */}
-                                    <div className="st-icon-1">
-                                      <div className="text-center">
-                                        <NavLink><i id="step-2x" className="fa-solid fa-circle"></i></NavLink>
-                                      </div>
-                                      <div className="stage1">Shifting</div>
-                                    </div>
-                                    <hr className="hr2 hrx2 border-3 opacity-100" />
-                                    {/* step-3 */}
-                                    <div className="st-icon-1">
-                                      <div className="text-center">
-                                        <NavLink><i id="step-2x" className="fa-solid fa-circle"></i></NavLink>
-                                      </div>
-                                      <div className="stage1">Delivered</div>
-                                    </div>
-                                  </div>
-                                  :
-                                  'no'
-                                    &&
-                                    status === 'Shifting' ?
+                            <div class="card_body2">
+                              <b className='p_title'>{pname}</b>
+                              <p>{desc}</p>
+                              <div className='inr'>
+                                <span className='rs'>₹{totalprice} </span>
+                                <span>Qty: {qty}</span>
+                              </div>
+                              <b>Payment Mode: {payment}</b>
+                            </div>
+                            <div>
+                              <div >
+                                {/* step-1 */}
+                                {
+                                  status === 'Processing' ?
                                     <div className="ordersteper">
                                       <div className="st-icon-1">
                                         <div className="text-center">
@@ -416,7 +392,7 @@ export default function OrderReceived() {
                                       {/* step-2 */}
                                       <div className="st-icon-1">
                                         <div className="text-center">
-                                          <NavLink><i id="step-2-complete" className="fa-solid fa-circle"></i></NavLink>
+                                          <NavLink><i id="step-2x" className="fa-solid fa-circle"></i></NavLink>
                                         </div>
                                         <div className="stage1">Shifting</div>
                                       </div>
@@ -432,7 +408,7 @@ export default function OrderReceived() {
                                     :
                                     'no'
                                       &&
-                                      status === 'Delivered' ?
+                                      status === 'Shifting' ?
                                       <div className="ordersteper">
                                         <div className="st-icon-1">
                                           <div className="text-center">
@@ -452,15 +428,15 @@ export default function OrderReceived() {
                                         {/* step-3 */}
                                         <div className="st-icon-1">
                                           <div className="text-center">
-                                            <NavLink><i id="step-3-complete" className="fa-solid fa-circle"></i></NavLink>
+                                            <NavLink><i id="step-2x" className="fa-solid fa-circle"></i></NavLink>
                                           </div>
                                           <div className="stage1">Delivered</div>
                                         </div>
                                       </div>
                                       :
                                       'no'
-                                        ||
-                                        status === 'Cancelled' ?
+                                        &&
+                                        status === 'Delivered' ?
                                         <div className="ordersteper">
                                           <div className="st-icon-1">
                                             <div className="text-center">
@@ -480,23 +456,51 @@ export default function OrderReceived() {
                                           {/* step-3 */}
                                           <div className="st-icon-1">
                                             <div className="text-center">
-                                              <NavLink>
-                                                <i id="step-4-complete" className="fa-solid fa-circle"></i>
-
-                                              </NavLink>
+                                              <NavLink><i id="step-3-complete" className="fa-solid fa-circle"></i></NavLink>
                                             </div>
-                                            <div className="stage1">Canceled</div>
+                                            <div className="stage1">Delivered</div>
                                           </div>
                                         </div>
-                                        : 'no'
-                              }
-                            </div>
-                          </div>
+                                        :
+                                        'no'
+                                          ||
+                                          status === 'Cancelled' ?
+                                          <div className="ordersteper">
+                                            <div className="st-icon-1">
+                                              <div className="text-center">
+                                                <NavLink><i id="step-1-complete" className="fa-solid fa-circle"></i></NavLink>
+                                              </div>
+                                              <div className="stage1">Processing</div>
+                                            </div>
+                                            <hr className="hr1 hrx1 border-3 opacity-100" />
+                                            {/* step-2 */}
+                                            <div className="st-icon-1">
+                                              <div className="text-center">
+                                                <NavLink><i id="step-2-complete" className="fa-solid fa-circle"></i></NavLink>
+                                              </div>
+                                              <div className="stage1">Shifting</div>
+                                            </div>
+                                            <hr className="hr2 hrx2 border-3 opacity-100" />
+                                            {/* step-3 */}
+                                            <div className="st-icon-1">
+                                              <div className="text-center">
+                                                <NavLink>
+                                                  <i id="step-4-complete" className="fa-solid fa-circle"></i>
 
-                        </Card>
-                      </>
-                    )
-                  })
+                                                </NavLink>
+                                              </div>
+                                              <div className="stage1">Canceled</div>
+                                            </div>
+                                          </div>
+                                          : 'no'
+                                }
+                              </div>
+                            </div>
+
+                          </Card>
+                        </>
+                      )
+                    })
                 }
               </div>
             </div>
