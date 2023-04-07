@@ -1,0 +1,145 @@
+.btn-can {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-ordercancel {
+    background-color: #ff685b;
+    padding: 0px 25px;
+    color: white;
+}
+
+.btn-reorder {
+    padding: 0px 25px;
+    color: white;
+    background-color: green;
+}
+
+#stepers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#stepers {
+    display: none;
+}
+
+.steperbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 70px 0px 80px 0px;
+    margin: 0px 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+
+.devd {
+    position: absolute;
+    margin-top: 170px;
+}
+
+.st-icon-1 {
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hr1,
+.hr2 {
+    width: 50px;
+    color: rgb(0, 255, 0);
+    margin-top: -6px;
+}
+
+.fa-circle {
+    color: #EEE;
+    font-size: 24px;
+}
+
+.fa-check {
+    background-color: rgb(0, 255, 0);
+    border-radius: 50px;
+    color: white;
+    padding: 5px;
+    /* color: red; */
+}
+
+.xxx {
+    font-size: 24px;
+    color: red;
+}
+
+.stage1 {
+    margin-top: 5px;
+}
+#rodr {
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#rodr{
+    display: none;
+}
+
+.orderhist-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+
+@media(max-width: 600px) {
+
+    .closestep {
+        position: absolute;
+        margin-top: -90px;
+        font-size: 30px;
+    }
+}
+
+@media(min-width: 601px) {
+
+
+    .steperbody {
+        width: 350px;
+        padding: 70px 0px 90px 0px;
+    }
+
+
+    .closestep {
+        position: absolute;
+        margin-top: -90px;
+        font-size: 30px;
+    }
+
+    .odpg {
+        margin-top: -3.5px;
+    }
+
+    #rodr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+
+    }
+    .reorder{
+        width: 50%;
+        margin-left: 150px;
+    }
+    #rodr{
+        display: none;
+    }
+
+}

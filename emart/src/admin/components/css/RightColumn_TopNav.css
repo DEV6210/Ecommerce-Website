@@ -1,0 +1,27 @@
+.adhome{
+    display: flex;
+    vertical-align: middle;
+    margin-top: 5px;
+    color: #00FFAB;
+   
+}
+.adhome:hover{
+    color: orange;
+}
+.homeicon{
+    margin-right: 5px;
+}
+.navoptions{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 12px 0px 12px;
+}
+.adminlogout{
+    background-color: red;
+    color: white;
+    padding: 2px 20px;
+    border-radius: 5px;
+}
+.adminlogout:hover{
+    background-color: #fe7171;
+}

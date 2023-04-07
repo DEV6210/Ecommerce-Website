@@ -1,0 +1,25 @@
+.home {
+    margin-top: 50px;
+}
+
+
+
+/*-------------- tablate or mobile landscape------------ */
+@media(min-width:601px) {}
+
+
+/*-----------------laptop screen-------------------*/
+
+
+@media(min-width: 900px) {}
+
+
+
+/*-----------------For Mobile Screen-------------------*/
+
+/* max-width ...means <500px mobile device size*/
+@media screen and (max-width: 600px) {
+    .home{
+        margin-bottom: 75px;
+    }
+}

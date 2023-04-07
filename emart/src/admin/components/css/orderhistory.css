@@ -1,0 +1,105 @@
+.histoirybody {
+    float: left;
+    justify-content: space-between;
+}
+
+.orderhistory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buyeremail {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.ord-image {
+    width: 100px;
+    height: 100px;
+    margin: 0px 0px 0px 5px;
+}
+.card_body2{
+    width: 100%;
+}
+
+.ordersteper {
+    display: flex;
+    margin: 5px;
+    margin-top: 10px;
+    height: auto;
+    justify-content: space-around;
+}
+
+.hrx1 {
+    margin-top: 10px;
+    margin-left: -18px;
+}
+
+.hrx2 {
+    margin-top: 10px;
+    margin-left: 0px;
+}
+.buyeremailorder-contenthead{
+    margin: 50px;
+}
+#step-1-complete,
+#step-2-complete,
+#step-3-complete {
+    color: rgb(0, 255, 0);
+}
+#step-4-complete {
+    color: rgb(255, 0, 0);
+}
+#step-1-complete,
+#step-2-complete,
+#step-3-complete,
+#step-4-complete,
+#step-2x {
+    font-size: 18px;
+}
+
+.stage1 {
+    font-size: 13px;
+}
+.card_bodyx{
+    margin: 5px 10px;
+}
+.card_body3{
+    margin: 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    padding: 5px;
+}
+.action-button{
+    margin: 5px 5px;
+}
+
+.btn-ord-status{
+    color: #a53f93;
+}
+.statusbtn-grp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 10px 10px 10px;
+    margin-top: -50px;
+}
+.track-imglottie{
+    width: 100%;
+    height: 500px;
+    margin-top: -80px;
+    margin-left: -5px;
+}
+.settrack{
+    position: sticky;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}

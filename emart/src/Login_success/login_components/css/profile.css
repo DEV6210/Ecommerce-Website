@@ -1,0 +1,436 @@
+.profile {
+    margin: 0px
+}
+
+
+
+
+/* horizontal threline nav bar */
+
+.threeline {
+    width: 50px;
+    display: block;
+    border: 4px solid #00bfb6;
+    padding: 8px 10px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    border: none;
+    margin-top: 5px;
+    margin-left: 5px;
+    position: absolute;
+
+
+}
+
+.threeline div {
+    height: 3px !important;
+    background: #e7e5e5;
+    margin: 7px 0px 7px 0px;
+    border-radius: 25px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+
+.fa-circle-info {
+    color: #e19b31;
+}
+
+.profile_row_1 {
+    text-align: center;
+
+}
+
+.profile_body {
+    padding-top: 60px;
+}
+
+.userphoto {
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+}
+
+.username {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.useremail {
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+.divs1 {
+    margin: 20px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+.box1 {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    width: 48%;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #5a5a5a;
+
+
+}
+
+.box_title {
+
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.editicon {
+    font-size: 16px;
+
+}
+
+.divs {
+    text-align: left;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    margin: 20px 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.address-title {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.address_details {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.a_detail {
+    font-size: 14px;
+    margin-right: 20px;
+    width: 100%;
+
+}
+
+/*---------------- logout -------------*/
+
+#u_logout {
+    position: fixed;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.778);
+
+}
+
+.conform {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    position: sticky;
+}
+
+.conform1,
+.conform2 {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    color: white;
+}
+
+.conform1 {
+    background-color: #53A93F;
+}
+
+.conform2 {
+    background-color: #D73D32;
+}
+
+.conform1:hover {
+    opacity: 0.8;
+}
+
+.conform2:hover {
+    opacity: 0.8;
+}
+
+#u_logout {
+    display: none;
+}
+
+button {
+    background-color: white;
+    border: none;
+}
+
+#chatbox {
+    display: none;
+}
+
+/* 
+.odbtn{
+    color: #6a6565;
+}
+.wishbtn{
+    color: #6a6565;
+} */
+
+#updataname {
+    position: fixed;
+    margin: 250px 0px 0px 400px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 50px 15px 50px 15px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#updataname {
+    display: none;
+}
+
+.nup-inp {
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 0px 5px;
+    height: 35px;
+}
+
+.upnbtn {
+    background-color: #53A93F;
+    padding: 3px 15px;
+    color: white;
+    border-radius: 5px;
+}
+
+#address {
+    position: fixed;
+    margin: 130px 0px 0px 400px;
+    background-color: #ffffff;
+    padding: 10px 13px 20px 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+}
+
+.adinp {
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+#address {
+    display: none;
+}
+
+.adchtitile {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.adupbtngrp {
+    float: right;
+}
+
+.upnbtn1 {
+    background-color: #D73D32;
+    margin-right: 10px;
+}
+
+
+
+.closenameupdate {
+    position: absolute;
+    margin-top: -55px;
+    font-size: 26px;
+    margin-left: 290px;
+    color: #D73D32;
+}
+
+.image_area:hover {
+    cursor: pointer;
+}
+
+
+#updateimage {
+    position: fixed;
+    margin: 250px 0px 0px 400px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 50px 15px 50px 15px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container:hover .image {
+    opacity: 0.3;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #fff6f673;
+    font-size: 14px;
+    padding-top: 60px;
+    color:rgb(255, 255, 255);
+}
+
+
+
+.ac-leftimage{
+    position: fixed;
+    margin-top: -100px;
+   
+}
+.acl{
+    width: 1000px;
+    height: 1000px;
+}
+
+/* event */
+
+
+
+
+
+/*-----------------laptop screen-------------------*/
+
+
+@media(min-width: 601px) {
+    #u_logout {
+        width: 455px;
+        padding: 10px;
+    }
+
+    .profilebody {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: right;
+        padding-bottom: 30px;
+    }
+
+    .profilebody1 {
+        /* position: absolute;
+        top: 0;
+        right: 0; */
+        margin: 0px;
+        margin: 85px 20px 0px 0px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+        border-radius: 10px;
+        background-color: white;
+        width: 454px;
+    }
+
+    #u_logout {
+        height: 80vh;
+        border-radius: 10px;
+    }
+
+    .conform {
+
+        height: 80vh;
+        border-radius: 10px;
+
+    }
+
+
+
+
+}
+
+/*-----------------For Mobile Screen-------------------*/
+
+/* max-width ...means <500px mobile device size*/
+@media screen and (max-width: 600px) {
+    #u_logout {
+        width: 100%;
+    }
+
+    .ac-leftimage {
+        display: none;
+    }
+
+
+    #updataname {
+        margin: 155px 0px 0px 10px;
+        display: block;
+        background-color: white;
+        padding: 50px 20px;
+
+    }
+
+    #updataname {
+        display: none;
+
+    }
+
+    .upnbtn {
+        padding: 4px 15px;
+    }
+
+    #address {
+        margin: 60px 0px 0px 5px;
+        position: absolute;
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
+
+
+    .adinp {
+        width: 320px;
+    }
+
+    .upnbtn2 {
+        margin-top: 20px;
+    }
+
+
+
+
+
+
+
+}

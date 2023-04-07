@@ -1,0 +1,36 @@
+.helpbody{
+    background-color: #EEE;
+    height: 93vh;
+}
+.chatbody{
+    margin: 50px 0px 0px 0px;
+    width: 100%;
+    height: 85vh;
+    padding-top: 10px;
+   
+}
+.chatinput{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0px;
+    width: 100%;
+    margin-left: 10px;
+}
+.chatinp{
+    margin-right: 5px;
+    box-shadow: 0px 10px 50px 12px lightblue;   
+}
+.chatinp:hover{
+    box-shadow: 0px 10px 50px 12px lightblue;
+}
+.chaticon{
+    padding: 0px 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.chatline{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

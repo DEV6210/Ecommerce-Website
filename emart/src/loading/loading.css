@@ -1,0 +1,39 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.lottie{
+    width: 100px;
+    height: 100px;
+}
+
+/*-------------- tablate or mobile landscape------------ */
+@media(min-width:601px) {
+    
+}
+
+
+/*-----------------laptop screen-------------------*/
+
+
+@media(min-width: 900px) {
+    .loading{
+        height: 85vh;
+    }
+
+}
+
+
+
+/*-----------------For Mobile Screen-------------------*/
+
+/* max-width ...means <500px mobile device size*/
+@media screen and (max-width: 600px) {
+    .loading{
+        height: 80vh;
+    }
+    
+
+}

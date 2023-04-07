@@ -1,0 +1,153 @@
+a {
+    font-size: 16px;
+    color: blue;
+}
+
+#name {
+
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.field {
+    margin: 10px 0px;
+    padding: 5px 0px;
+    display: block;
+}
+
+.click {
+    margin-top: 6px;
+}
+
+.input_field {
+    height: 38px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.log_i {
+    font-size: 16px;
+    margin-right: 5px;
+    color: #656464;
+
+}
+
+.labels {
+    font-style: normal;
+    font-weight: 550;
+    font-family: 'Mier book';
+    color: #646262;
+    padding-bottom: 0px;
+
+}
+
+
+
+.signuproot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+
+}
+
+.signupform {
+    background-color: white;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border-radius: 10px;
+    padding: 15px 20px 18px 20px;
+}
+
+.inputs {
+    padding-left: 5px;
+}
+.signintitle{
+    font-size: 24px;
+    color: rgb(47, 47, 48);
+    font-weight: bold;
+    opacity: 0.8;
+}
+.navlogin{
+    background-color:rgb(0, 102, 255) ;
+    padding: 8px 18px 8px 18px;
+    border-radius: 5px;
+    color: white;
+    border: solid 1px white;
+}
+.btn-s:hover{
+    opacity: 0.8;
+}
+hr{
+    margin-top: 5px;
+}
+.btn-2{
+    background-color:rgb(0, 102, 255) ;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+    border: solid 1px white;
+    margin: 0px;
+    
+}
+.btn-s2{
+    margin-left: 5px;
+    background-color:rgb(5, 173, 98) ;
+    padding: 8px 18px 7px 18px;
+    border-radius: 5px;
+    color: white;
+    border: solid 1px white;
+}
+.btn-s3{
+    margin-right: 5px;
+    background-color:rgb(5, 173, 98) ;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+    border: solid 1px white;
+}
+/*-------------- tablate or mobile landscape------------ */
+@media(min-width:601px) {}
+
+
+/*-----------------laptop screen-------------------*/
+
+
+@media(min-width: 900px) {}
+
+
+
+/*-----------------For Mobile Screen-------------------*/
+
+/* max-width ...means <500px mobile device size*/
+@media screen and (max-width: 600px) {
+
+    .sicon {
+        font-size: 50px;
+    }
+
+    .click {
+        padding: 0px;
+        margin-top: 10px;
+    }
+
+    .signupform {
+        width: 100%;
+        margin: 10px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+    .signintitle{
+        font-size: 20px;
+        display: none;
+    }
+    .signupform{
+        box-shadow: none;
+    }
+
+}

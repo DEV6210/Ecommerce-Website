@@ -1,0 +1,56 @@
+.userbody {
+    margin-left: 8px;
+}
+
+.usercard {
+    float: left;
+    margin: 10px;
+    width: 298px;
+}
+
+.reg-user-image {
+    width: 40px;
+    height: 40px;
+}
+
+.settings {
+    position: absolute;
+}
+
+.userphoto2 {
+    width: 150px;
+    height: 130px;
+}
+
+.card2-body {
+    display: flex;
+    margin: 10px 10px;
+}
+
+.suspend {
+    color: red;
+    border: solid 1px red;
+    border: solid 1px red;
+    color: #ffffff;
+    background-color: #d73d32;
+    border-radius: 5px;
+
+}
+
+.deactive {
+    border-radius: 5px;
+    background-color: white;
+    color: red;
+    border: solid 1px red;
+    border: solid 1px red;
+}
+
+.suspend:hover {
+    color: #c7c7c7;
+}
+
+.deactive:hover {
+    color: #ffffff;
+    background-color: #53a93f;
+    border-color: #53a93f;
+}

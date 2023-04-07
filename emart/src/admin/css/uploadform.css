@@ -1,0 +1,52 @@
+.modal-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.btn-cancel{
+    margin-right: 10px;
+}
+.up_form{
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+    padding: 15px 25px;
+}
+.modal-footer{
+    margin-top: 20px;
+    margin-right: -10px;
+}
+.fieldx, .fieldx1{
+    width: 96%;
+    
+}
+.fieldx1{
+    margin-left: 5px;
+}
+.admin_navlinkx{
+    background-color: rgb(255, 255, 255);
+    color: rgb(96, 197, 172);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 2px 50px 5px 10px;
+    border-radius: 0px 15px 15px 0px;
+}
+.admin_navlinkx:hover{
+    color: white;
+    background-color: rgb(96, 197, 172);;
+
+}
+#cal{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: aliceblue;
+    margin: 5px 0px;
+}
+
+.btn-cancel, .btn-submit{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+}
+.modal-footer{
+    border: none;
+}

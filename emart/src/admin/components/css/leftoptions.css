@@ -1,0 +1,42 @@
+.option1-home {
+    background-color: #dadada;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 15px;
+    display: flex;
+    color: rgb(0, 0, 0);
+}
+
+.option1-home:hover {
+    background-color: #f0eeee;
+    color: orange;
+}
+
+li {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 25px solid #ffffff;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    margin: -32px 20px 0px 206px;
+}
+.triangle-left{
+    display: none;
+}
+.adminsetting {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    margin-left: 15px;
+}
+
+.optitle {
+    color: white;
+    margin-left: 10px;
+}

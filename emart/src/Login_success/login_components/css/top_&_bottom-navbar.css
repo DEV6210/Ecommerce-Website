@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: white;
+}
+
+/* Top Nav Bar  */
+.nav_link {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: 'Mier book';
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0px 10px 0px 10px;
+    padding: 5px 10px;
+    color: rgb(96, 197, 172);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+/* .login{
+    background-color: rgb(96, 197, 172);
+    color: white;
+
+} */
+
+.nav_link:hover {
+    background-color: rgb(96, 197, 172);
+    color: white;
+
+}
+.ordericon{
+    color: rgb(96, 197, 172);
+    width: 16px;
+    height: 16px;
+    margin: -5px 5px 0px 0px;
+}
+
+.nav_link:hover .ordericon{
+    color: #ffffff;
+}
+
+/* Bottom Navbar Button */
+.BottomNav {
+    display: none;
+}
+
+
+svg {
+    border-bottom: none;
+}
+
+/* nav end */
+
+
+
+/*-------------- tablate or mobile landscape------------ */
+/*@media(min-width:601px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .applogo {
+        width: 40px;
+        height: 40px;
+        margin-top: 5px;
+    }
+
+    .nav_link_option {
+        margin-top: 12px;
+
+    }
+
+    .nav_link {
+        margin-right: 15px;
+    }
+
+    i {
+        margin-right: 5px;
+    }
+
+
+} */
+
+
+/*-----------------laptop screen-------------------*/
+
+
+@media(min-width: 601px) {
+
+    .nav {
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0px 0px 0px;
+        height: 60px;
+        padding-left: 50px;
+        padding-right: 50px;
+
+
+    }
+
+    .nav_link {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: 'Mier book';
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 0px 10px 0px 10px;
+        padding: 5px 10px;
+
+    }
+
+    ul {
+        margin-top: -10px;
+    }
+
+    .nav_link_option {
+        margin-top: 3px;
+    }
+
+    .applogo {
+        margin-top: 0px;
+    }
+    .navmobile{
+        display: none;
+    }
+    
+    
+
+
+
+}
+
+
+
+/*-----------------For Mobile Screen-------------------*/
+
+/* max-width ...means <500px mobile device size*/
+@media screen and (max-width: 600px) {
+    * {
+        transition: all 0.2 linear;
+    }
+
+
+    .nav {
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        /* background-color: rgb(46, 46, 42); */
+        /* background-color: rgb(76, 76, 76); */
+
+        padding: 0px 0px 5px 0px;
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: block;
+        transition: top 0.3s;
+        margin-bottom: 56px;
+    }
+
+
+    ul,
+    .applogo {
+        margin: 0px;
+
+    }
+
+    ul {
+        overflow: hidden;
+    }
+
+    .applogo {
+        height: 40px;
+        margin-left: -20px;
+        margin-top: 5px;
+        float: left;
+        /* display: none; */
+    }
+
+    ul {
+        margin-right: -10px;
+    }
+
+    .nav_link_option {
+        display: none;
+    }
+
+    /* Bottom Navbar button */
+    .BottomNav {
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 55px;
+        display: flex;
+        overflow-x: auto;
+        padding-top: 5px;
+        border-radius: 10px 10px 0px 0px;
+
+    }
+
+    .bottomnav {
+        color: black;
+        display: flex;
+        flex-grow: 1;
+        overflow: hidden;
+        flex-direction: column;
+        text-decoration: none;
+        align-items: center;
+        border: none;
+        background-color: white;
+    }
+
+    .bottomnav:hover {
+        /* color: #3b32b3;
+        border-top: solid #3b32b3 2px; */
+        padding-top: 5px;
+        margin-top: -5px;
+    }
+
+    .bottom-option {
+        width: 25px;
+        height: 25px;
+
+    }
+
+    .nav_link_option {
+        display: none;
+    }
+
+    span {
+        font-size: 14px;
+    }
+    .ul_none{
+        display: none;
+    }
+
+    /* wishlist */
+    #wishlist{
+        display: none;
+    }
+    .navdesktop{
+        display: none;
+    }
+
+}

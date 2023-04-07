@@ -1,0 +1,19 @@
+.ordersuccessimage{
+    width:100%px;
+    height:300px;
+}
+.ordsuccress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.ordcnf{
+    text-align: center;
+}
+.ordsuccress2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -245px;
+}

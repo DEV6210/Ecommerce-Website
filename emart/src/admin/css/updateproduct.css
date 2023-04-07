@@ -1,0 +1,100 @@
+.edit-body {
+    height: 90vh;
+    overflow-x: auto;
+    margin-left: 5px;
+    background-color: #EEE;
+}
+
+.productimage {
+    width: 200px;
+    height: 200px;
+}
+
+.productcard {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    margin: 0px 0px 20px 16px;
+    padding: 0px;
+    background-color: white;
+}
+
+.edit-product-image {
+    width: 150px;
+    height: 150px;
+}
+
+.card_body2 {
+    width: 252px;
+    text-align: left;
+    overflow: hidden;
+    margin-left: 5px;
+    background-color: white;
+}
+
+.editx {
+    background-color: rgb(58, 58, 58);
+    padding-left: 10px;
+}
+
+.up4 {
+    color: orange;
+    background: none;
+    font-size: 25px;
+    margin-right: -2px;
+}
+
+.btn-action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-delete {
+    background-color: #D73D32;
+    width: 48%;
+    color: rgb(255, 255, 255);
+}
+
+.btn-update {
+    background-color: #53a93f;
+    width: 48%;
+    color: white;
+    margin-right: 5px;
+}
+
+.updatealert {
+    margin: 0px 0px 0px 25px;
+}
+
+.yesno {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 10px 50px 10px;
+}
+
+.yes {
+    background-color: #53a93f;
+    color: white;
+    width: 50%;
+    padding: 5px 0px;
+    margin: 5px;
+}
+
+.no {
+    background-color: #D73D32;
+    color: white;
+    width: 50%;
+    padding: 5px 0px;
+    margin: 5px;
+}
+.yes:hover{
+    opacity: 0.8;
+}
+.no:hover{
+    opacity: 0.8;
+}
+.deletebox {
+    /* padding: 50px; */
+
+}

@@ -1,0 +1,197 @@
+.buyproduct {
+    margin: 65px 0px 0px 0px;
+    padding: 10px;
+    /* background-color: rgb(250, 250, 250); */
+}
+
+.buyimage {
+    width: 100px;
+    height: 108px;
+}
+
+.buy {
+    display: flex;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    padding: 5px;
+
+}
+
+.bdiv-1 {
+    margin-top: 4px;
+    margin-right: 2px;
+}
+
+.bdiv-2 {
+    margin-top: 0px;
+}
+
+
+.decriment,
+.incriment {
+    background-color: #EEE;
+}
+
+.quantity {
+    text-align: center;
+    width: 50px;
+    border: none;
+}
+
+.qty {
+    margin-top: 10px;
+    padding: 5px;
+
+
+}
+
+.qty-2 {
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.totalprice {
+    font-weight: bold;
+    margin-left: 20px;
+    /* box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px; */
+    padding: 5px;
+
+}
+
+.dads {
+    padding: 5px 2px;
+    margin: 10px 0px 0px 0px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
+}
+
+#conform-order {
+    position: fixed;
+    width: 100%;
+
+}
+
+#conform-order {
+    display: none;
+}
+
+.onlinepay {
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    padding: 50px 10px 40px 10px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 10px;
+
+}
+
+.qrcode {
+    width: 100%;
+}
+
+.timer {
+    position: fixed;
+    margin: -35px 0px 0px 220px;
+}
+
+.paycancel {
+    background-color: #D73D32;
+    margin-top: 40px;
+    color: white;
+    padding: 5px 25px;
+}
+
+.paycancel:hover {
+    opacity: 0.8;
+}
+
+.payrs {
+    position: fixed;
+    margin: -35px 0px 0px 10px;
+}
+
+.cancel-order {
+    position: fixed;
+    width: 100%;
+
+}
+
+#cancel-order {
+    display: none;
+}
+
+.cancelorder {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+@media(min-width:600px) {
+    .qrcode {
+        width: 100%;
+        height: 300px;
+    }
+
+    #conform-order {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .payrs {
+        position: fixed;
+        margin: -35px 0px 0px 22px;
+    }
+
+    .timer {
+        position: fixed;
+        margin: -35px 0px 0px 230px;
+    }
+
+    .onlinepay {
+        width: auto;
+        padding: 50px 20px;
+    }
+
+    #conform-order {
+        display: none;
+    }
+
+    #buy {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* width: 100%; */
+        height: 80vh;
+
+    }
+
+    .buy-1 {
+        width: 915px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        padding: 10px;
+        /* border-radius: 5px; */
+    }
+
+    .payonline2 {
+        box-shadow: none;
+    }
+
+    .buy {
+        box-shadow: none;
+    }
+
+    .dads {
+        box-shadow: none;
+    }
+
+    .bdiv-2 {
+        margin-left: 15PX;
+    }
+
+    .buyimage {
+        width: 120px;
+        height: 115px;
+    }
+
+}
