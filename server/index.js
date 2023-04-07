@@ -57,7 +57,7 @@ app.use('/users_image', express.static('users_image'))
 
 //root 
 app.get('/', (req, res) => {
-    res.send('server is running...')
+    res.send('emart server is running...')
 })
 
 
