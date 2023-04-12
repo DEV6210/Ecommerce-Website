@@ -215,7 +215,7 @@ const Dashboard = () => {
                             {/* product  */}
                             {/* <h3 className='head_title'>Buy Now</h3> */}
 
-                            <div className='product-list row'>
+                            <div className='product-list row sres'>
                                 <div className="pl-1 col-12 col-md-11 ">
 
                                     {

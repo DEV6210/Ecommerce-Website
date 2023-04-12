@@ -6,6 +6,7 @@ import Loading from "../../loading/loading"
 import { BottomNav } from "../Navbar"
 import Navbarall from "../NavbarAll"
 import React from "react"
+import { apiurl } from "../../services/api"
 
 
 
@@ -21,7 +22,7 @@ const CatagoryBeforelogin = () => {
     const [done, setDone] = useState(undefined)
 
     const getProduct = async () => {
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -57,7 +58,7 @@ const CatagoryBeforelogin = () => {
         const { search } = searchitem
         const catagory = search
         // console.log(catagory)
-        const getResult = await fetch(`http://localhost:8000/catagory`, {
+        const getResult = await fetch(`${apiurl}/catagory`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -200,7 +201,7 @@ const CatagoryBeforelogin = () => {
                                                         <NavLink to={`/viewproduct/${id}`} className='card'>
                                                             {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                             <div className="imgsection">
-                                                                <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                             </div>
                                                             <div class="card_body">
                                                                 <b className='p_title'>{name}</b>
@@ -249,7 +250,7 @@ const CatagoryBeforelogin = () => {
                                                             <NavLink to={`/viewproduct/${_id}`} className='card'>
                                                                 {/* <NavLink id='hart'><i class="fa-regular fa-heart love"></i></NavLink> */}
                                                                 <div className="imgsection">
-                                                                    <img src={`http://localhost:8000/uploads/${image}`} alt='product image' className='card-img-top' />
+                                                                    <img src={`${apiurl}/uploads/${image}`} alt='product image' className='card-img-top' />
                                                                 </div>
                                                                 <div class="card_body">
                                                                     <b className='p_title'>{name}</b>

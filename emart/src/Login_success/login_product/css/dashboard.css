@@ -108,4 +108,8 @@ body::-webkit-scrollbar {
     .row_1{
         margin-top: -15px;
     }
+    #searchvalue{
+        margin: 0px;
+        width: 280px;
+    }
 }

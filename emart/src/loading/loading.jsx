@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
-import groovyWalkAnimation from "./98288-loading.json";
+// import groovyWalkAnimation from "./98288-loading.json";
+import groovyWalkAnimation from "../components/json_image/smart-key-loading.json"
 import './loading.css'
 const Loading = () => {
   return (

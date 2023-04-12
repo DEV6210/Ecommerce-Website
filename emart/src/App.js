@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/HomePage';
@@ -52,15 +53,8 @@ function App() {
           <Route path='/viewproduct/:id' element={<ViewProductBeforeLogin />} />
           <Route path='/viewcatagory/:catagory' element={<CatagoryBeforelogin />} />
 
-          
-
-
-
           {/* WrongParams */}
-          <Route path='/wrongparams/:id' element={<WrongParams />} />
-
-
-          
+          <Route path='/wrongparams/:id' element={<WrongParams />} />         
 
           {/* Admin Pannel */}
           <Route path='/adminlogin/' element={<Admin_login/>}/>

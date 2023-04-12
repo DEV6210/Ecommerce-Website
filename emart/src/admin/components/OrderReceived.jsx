@@ -357,12 +357,12 @@ export default function OrderReceived() {
                                 </Avatar>
                               }
                               action={
-                                <IconButton aria-label="settings" onClick={() => { handleOpen({ _id, uid, uname, email, phone, address, uimage, pid, pname, desc, catagory, price, qty, totalprice, payment, status, pimage }) }}>
+                                <IconButton  aria-label="settings" onClick={() => { handleOpen({ _id, uid, uname, email, phone, address, uimage, pid, pname, desc, catagory, price, qty, totalprice, payment, status, pimage }) }}>
                                   <MoreVertIcon />
                                 </IconButton>
                               }
-                              title={uname}
-                              subheader={email}
+                              title=<div className='user_title'>{uname}</div>
+                              // subheader=<div className='user_title'>{email}</div>
                             />
                             <div className='ordercard'>
                               <img src={`${apiurl}/uploads/${pimage}`} alt='pimage' className='ord-image' />

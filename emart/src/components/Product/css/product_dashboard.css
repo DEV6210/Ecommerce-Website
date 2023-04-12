@@ -273,6 +273,9 @@ p {
     .mobnav{
         display: none;
     }
+    .loadalertbody{
+        width: 400px;
+    }
     
 }
 
@@ -299,6 +302,7 @@ p {
     .slider {
         width: 100%;
         display: flex;
+        margin-top: 70px;
     }
 
     .slide_img {
@@ -325,6 +329,8 @@ p {
     .product_list {
         margin: 0px;
         padding: 0px;
+        margin-top: 60px;
+
     }
 
     .cartstyle {
@@ -407,6 +413,9 @@ p {
         padding-left: 0px;
         padding-bottom: 100px;
     }
+    .sres{
+        margin-top: 60px;
+    }
     .footer{
         display: none;
     }
@@ -417,4 +426,29 @@ p {
     .desknav{
         display: none;
     }
+    .loadalertbody{
+        width:320px;
+    }    
+    .loadbodycard{
+        width: 320px;
+    }
+    .cls_alert{
+        margin-left: -30px;
+    }
+}
+.ourapp{
+    width: 100%;
+}
+.downloadlink{
+    width: 100%;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding: 8px 0px;
+    display: flex;
+    justify-content: center;
+}
+.downloadicon{
+    margin-top: -5px;
+    margin-right: 8px;
 }
