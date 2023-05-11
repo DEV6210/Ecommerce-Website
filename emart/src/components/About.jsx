@@ -34,16 +34,16 @@ const messages = [
         author: 'bot',
         body: [
             {
-                url: '',
+                url: '/login',
                 text: 'Profile'
             },
             {
-                url: '',
-                text: 'Order'
+                url: '/cart',
+                text: 'wishlist'
             },
             {
-                url: '',
-                text: 'help?'
+                url: '/',
+                text: 'dashboard'
             }
         ],
         timeout: 5000

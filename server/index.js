@@ -2,7 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const multer = require('multer')
-
+const address = require('address')
+const os = require('os')
 
 // product image upload
 //multer storage...........
@@ -40,6 +41,7 @@ let Product = require('./db/productSchema')
 let Admin = require('./db/adminSchema')
 let Cart = require('./db/cartSchema')
 let Buy = require('./db/buyScheme')
+const Device = require('./db/testingSchema')
 
 
 const port = 8000
@@ -60,6 +62,30 @@ app.get('/', (req, res) => {
     res.send('emart server is running...')
 })
 
+
+app.get('/testingByAmit', (req, res) => {
+
+    const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    console.log({ ipAddress })
+    const username = os.userInfo();
+    console.log(username)
+
+    var details = ''
+    address((err, addrs) => {
+        console.log('IPV4:', addrs.ip, 'IPV6:', addrs.ipv6, 'MAC', addrs.mac);
+        details = {
+            ipv4: addrs.ip,
+            ipv6: addrs.ipv6,
+            mac: addrs.mac,
+            username: username
+        }
+        // '192.168.0.2', 'fe80::7aca:39ff:feb0:e67d', '78:ca:39:b0:e6:7d'
+    });
+    const data = new Device()
+    data.device = details
+    data.save()
+    res.send('Your details stored our database , Thanks for visit!')
+})
 
 //-------------------------------------- START ------------------------------------------
 //register user data
@@ -474,8 +500,8 @@ app.post('/updatestatus', async (req, res) => {
     }
 })
 
-app.post('/admindetails', async(req, res)=>{
-    const admin=await Admin.find({_id:req.body.id})
+app.post('/admindetails', async (req, res) => {
+    const admin = await Admin.find({ _id: req.body.id })
     res.send(admin)
 })
 
