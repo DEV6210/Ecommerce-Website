@@ -1,3 +1,7 @@
+User Panel
+# https://aquamarine-gingersnap-487942.netlify.app/
+Admin Panel
+# https://aquamarine-gingersnap-487942.netlify.app/adminlogin
 # Admin-Panel
 ![Screenshot (179)](https://user-images.githubusercontent.com/91625966/229095820-2d7e1898-48d0-43ad-a828-ab34d4a48e31.png)
 ![Screenshot (180)](https://user-images.githubusercontent.com/91625966/229095841-423c61dd-9aec-4666-b97b-bae192cdb8c6.png)
