@@ -10,7 +10,7 @@ import Footer from "../../components/Footer";
 import './css/slider.scss'
 import { apiurl } from '../../services/api'
 const Dashboard = () => {
-
+    
     var Style1 = {
         backgroundColor: 'rgb(96, 197, 172)',
         color: 'white'

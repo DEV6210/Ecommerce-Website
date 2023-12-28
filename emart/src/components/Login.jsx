@@ -87,7 +87,7 @@ const Login = () => {
             if (result) {
                 // console.log(result)
                 //navigate another page 
-                navigate(`/dashboard/${result._id}`)
+                navigate(`/dashboard/${result._id}`);
             } else {
                 // alert('User Id and Password not match')
                 handleClick()
@@ -128,7 +128,7 @@ const Login = () => {
             <div className='Login_Signup'>
                 <form className='login_form' id='loginForm'>
                     <div className='signintitle2 '>
-                    <img src="/favicon/icon.ico" alt="logo" className="loginglogo"/>
+                        <img src="/favicon/icon.ico" alt="logo" className="loginglogo" />
                         Hey there, Welcome...
                         <hr />
                     </div>
