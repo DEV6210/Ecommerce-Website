@@ -1,7 +1,28 @@
 User Panel
 # https://emart-ecommerce-webapp.netlify.app
+
+# user login details
+User Id:
+```
+test@gmail.com
+```
+Password:
+```
+test
+```
+
 Admin Panel
 # https://emart-ecommerce-webapp.netlify.app/adminlogin
+
+# admin login details
+Admin Id:
+```
+admin
+```
+Password:
+```
+admin
+```
 # Admin-Panel
 ![Screenshot (179)](https://user-images.githubusercontent.com/91625966/229095820-2d7e1898-48d0-43ad-a828-ab34d4a48e31.png)
 ![Screenshot (180)](https://user-images.githubusercontent.com/91625966/229095841-423c61dd-9aec-4666-b97b-bae192cdb8c6.png)
